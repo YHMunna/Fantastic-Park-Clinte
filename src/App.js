@@ -9,12 +9,11 @@ import Menubar from "./Components/Menubar/Menubar";
 import Services from "./Components/Services/Services";
 import About from "./Components/About/About";
 import Login from "./Components/Login/Login";
-import SingleService from "./Components/SingleService/SingleService";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
-import WaterRide from "./Components/waterRide/WaterRide";
-import Resort from "./Components/Resort/Resort";
+
 import MyOrder from "./Components/MyOrder/MyOrder";
 import AllOrder from "./Components/AllOrder/AllOrder";
+import AddService from "./Components/AddService/AddService";
 function App() {
   return (
     <AuthProvider>
@@ -30,15 +29,16 @@ function App() {
           <Route exact path="/services">
             <Services></Services>
           </Route>
-          <PrivateRoute exact path="/services/:id">
-            <SingleService></SingleService>
-          </PrivateRoute>
           <PrivateRoute exact path="/myorder">
             <MyOrder></MyOrder>
           </PrivateRoute>
           <PrivateRoute exact path="/allorder">
             <AllOrder></AllOrder>
           </PrivateRoute>
+
+          <Route exact path="/addservice">
+            <AddService></AddService>
+          </Route>
           <Route exact path="/about">
             <About></About>
           </Route>

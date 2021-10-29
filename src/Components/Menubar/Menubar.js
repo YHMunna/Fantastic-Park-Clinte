@@ -64,6 +64,18 @@ const Menubar = () => {
             <Nav.Link>
               <NavLink
                 className="nav-link"
+                to="/addservice"
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "White",
+                }}
+              >
+                Add Service
+              </NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink
+                className="nav-link"
                 to="/about"
                 activeStyle={{
                   fontWeight: "bold",
