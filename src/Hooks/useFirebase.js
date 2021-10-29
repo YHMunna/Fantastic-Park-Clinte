@@ -4,7 +4,6 @@ import {
   signInWithPopup,
   onAuthStateChanged,
   signOut,
-  updateProfile,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../Firebase/Firebase.init";
@@ -34,17 +33,6 @@ const useFirebase = () => {
     return signInWithPopup(auth, googleProvider);
   };
 
-  const updateName = (name) => {
-    updateProfile(auth.currentUser, {
-      displayName: name,
-    })
-      .then(() => {
-        const newUser = { ...user, displayName: name };
-        setUser(newUser);
-      })
-      .catch((error) => {});
-  };
-
   const logOut = () => {
     console.log("Log Out");
     signOut(auth)
@@ -52,7 +40,7 @@ const useFirebase = () => {
         setUser({});
       })
       .catch((error) => {
-        // An error happened.
+        // An error
       });
   };
 
@@ -61,9 +49,7 @@ const useFirebase = () => {
     setUser,
     signInWithGoogle,
     isLoading,
-    setIsLoading,
     logOut,
-    updateName,
   };
 };
 

@@ -73,7 +73,7 @@ const Menubar = () => {
                 About
               </NavLink>
             </Nav.Link>
-            <p className="text-white">{user?.displayName}</p>
+            <p className="text-white pt-3 pe-2">{user?.displayName}</p>
             {user.email ? (
               <button className="btn btn-primary" onClick={logOut}>
                 {" "}
