@@ -40,25 +40,25 @@ const Menubar = () => {
             <Nav.Link>
               <NavLink
                 className="nav-link"
-                to="/waterRide"
+                to="/myorder"
                 activeStyle={{
                   fontWeight: "bold",
                   color: "White",
                 }}
               >
-                Water Ride
+                My Orders
               </NavLink>
             </Nav.Link>
             <Nav.Link>
               <NavLink
                 className="nav-link"
-                to="/resort"
+                to="/allorder"
                 activeStyle={{
                   fontWeight: "bold",
                   color: "White",
                 }}
               >
-                Resort
+                Manage Orders
               </NavLink>
             </Nav.Link>
             <Nav.Link>

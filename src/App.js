@@ -13,6 +13,8 @@ import SingleService from "./Components/SingleService/SingleService";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import WaterRide from "./Components/waterRide/WaterRide";
 import Resort from "./Components/Resort/Resort";
+import MyOrder from "./Components/MyOrder/MyOrder";
+import AllOrder from "./Components/AllOrder/AllOrder";
 function App() {
   return (
     <AuthProvider>
@@ -31,11 +33,11 @@ function App() {
           <PrivateRoute exact path="/services/:id">
             <SingleService></SingleService>
           </PrivateRoute>
-          <PrivateRoute exact path="/waterRide">
-            <WaterRide></WaterRide>
+          <PrivateRoute exact path="/myorder">
+            <MyOrder></MyOrder>
           </PrivateRoute>
-          <PrivateRoute exact path="/resort">
-            <Resort></Resort>
+          <PrivateRoute exact path="/allorder">
+            <AllOrder></AllOrder>
           </PrivateRoute>
           <Route exact path="/about">
             <About></About>
