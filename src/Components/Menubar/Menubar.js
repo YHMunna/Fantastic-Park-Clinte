@@ -2,8 +2,10 @@ import React from "react";
 import "./Menubar.css";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const Menubar = () => {
+  const { user, logOut } = useAuth();
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -38,6 +40,30 @@ const Menubar = () => {
             <Nav.Link>
               <NavLink
                 className="nav-link"
+                to="/waterRide"
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "White",
+                }}
+              >
+                Water Ride
+              </NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink
+                className="nav-link"
+                to="/resort"
+                activeStyle={{
+                  fontWeight: "bold",
+                  color: "White",
+                }}
+              >
+                Resort
+              </NavLink>
+            </Nav.Link>
+            <Nav.Link>
+              <NavLink
+                className="nav-link"
                 to="/about"
                 activeStyle={{
                   fontWeight: "bold",
@@ -47,6 +73,26 @@ const Menubar = () => {
                 About
               </NavLink>
             </Nav.Link>
+            <p className="text-white">{user?.displayName}</p>
+            {user.email ? (
+              <button className="btn btn-primary" onClick={logOut}>
+                {" "}
+                Sign Out
+              </button>
+            ) : (
+              <Nav.Link>
+                <NavLink
+                  className="nav-link"
+                  to="/login"
+                  activeStyle={{
+                    fontWeight: "bold",
+                    color: "White",
+                  }}
+                >
+                  Login
+                </NavLink>
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
