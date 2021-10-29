@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 const SingleService = (props) => {
   const { user } = useAuth();
@@ -15,7 +16,11 @@ const SingleService = (props) => {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(orderData),
-    });
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        window.alert("added cart");
+      });
   };
   return (
     <div className="col-md-4 p-3">
@@ -25,9 +30,11 @@ const SingleService = (props) => {
           <Card.Title>Name: {service.name}</Card.Title>
           <Card.Title>Price: {service.price}</Card.Title>
           <Card.Text>{service.details}</Card.Text>
-          <Button onClick={handleAddRide} variant="primary">
-            Add Ride
-          </Button>
+          <Link to="/myorder">
+            <Button onClick={handleAddRide} variant="primary">
+              Add Cart
+            </Button>
+          </Link>
         </Card.Body>
       </Card>
     </div>

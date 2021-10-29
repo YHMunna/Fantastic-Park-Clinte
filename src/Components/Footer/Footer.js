@@ -2,7 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div class="container text-white bg-dark mt-5">
+    <div
+      class="container text-white bg-dark mt-5 p-5
+    "
+    >
       <div class="row">
         <div class="col-sm">
           <h6>Facebook</h6>
