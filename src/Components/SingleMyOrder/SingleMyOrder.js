@@ -4,7 +4,7 @@ import { Card, Button } from "react-bootstrap";
 const SingleMyOrder = (props) => {
   const { order } = props;
   return (
-    <div className="p-2">
+    <div className="p-2 col-md-4">
       <Card style={{ width: "18rem" }}>
         <Card.Body>
           <Card.Title>Ride Name: {order.name}</Card.Title>
