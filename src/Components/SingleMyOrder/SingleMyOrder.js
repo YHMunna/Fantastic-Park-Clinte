@@ -12,7 +12,6 @@ const SingleMyOrder = (props) => {
           <Card.Title className="text-primary">
             Order Status: {order.status}
           </Card.Title>
-
           <Button variant="primary">Place Order</Button>
         </Card.Body>
       </Card>
