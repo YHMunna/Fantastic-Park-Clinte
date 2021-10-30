@@ -29,6 +29,8 @@ const AllOrder = () => {
       });
     console.log(id);
   };
+  //handle approve
+  const handleAprove = (id) => {};
 
   return (
     <div>
@@ -39,15 +41,17 @@ const AllOrder = () => {
             key={allorder.id}
             allorder={allorder}
             handleDelete={handleDelete}
+            handleAprove={handleAprove}
           ></SingleAllOrder>
         ))}
         <thead>
           <tr>
-            <th scope="col">Sl No</th>
             <th scope="col">Ride name</th>
             <th scope="col">Rdie Price</th>
+            <th scope="col">Order Status</th>
             <th scope="col">Update</th>
             <th scope="col">Delete</th>
+            <th scope="col">Aprove</th>
           </tr>
         </thead>
       </table>
