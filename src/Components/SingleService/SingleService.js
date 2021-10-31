@@ -11,6 +11,7 @@ const SingleService = (props) => {
     const orderData = service;
     orderData.email = user.email;
     orderData.status = "pending";
+    delete orderData._id;
     // console.log(orderData);
     fetch("http://localhost:5000/addRide", {
       method: "POST",
@@ -23,7 +24,7 @@ const SingleService = (props) => {
       });
   };
   return (
-    <div className="col-md-4 p-3">
+    <div className="col-md-4  p-3">
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={service.image} />
         <Card.Body>

@@ -23,6 +23,7 @@ const AllOrder = () => {
       .then((data) => {
         if (data.deletedCount) {
           setIsDeletde(true);
+          alert("deleted service");
         } else {
           setIsDeletde(false);
         }

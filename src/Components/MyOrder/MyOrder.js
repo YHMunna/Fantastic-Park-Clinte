@@ -14,9 +14,19 @@ const MyOrder = () => {
     fetch(`http://localhost:5000/myOrders/${email}`)
       .then((res) => res.json())
       .then((data) => {
+        // const combaineData = [
+        //   {
+        //     email: data.email,
+        //     price: data.price,
+        //     img: data.img,
+        //     details: data.details,
+        //     status: data.status,
+        //   },
+        // ];
+        // setOrders(combaineData);
         setOrders(data);
       });
-  }, []);
+  }, [orders]);
   return (
     <div>
       <h1>My Orders : {orders.length}</h1>

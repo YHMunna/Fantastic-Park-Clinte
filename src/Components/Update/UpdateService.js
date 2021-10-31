@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 
 const UpdateService = () => {
   const { serviceID } = useParams();
-  const [service, setService] = useState({});
+  const [service, setService] = useState([]);
   useEffect(() => {
     const url = `http://localhost:5000/updateProduct/${serviceID}`;
     fetch(url)
@@ -63,7 +63,7 @@ const UpdateService = () => {
   };
   return (
     <div>
-      <h1 className="p-2">Update Servce Name:{service.name}</h1>
+      <h1 className="p-2 text-center">Update Service Name:{service.name}</h1>
       <form className="text-center" onSubmit={() => handleUpadteService()}>
         <input
           onChange={handleImageChnage}
