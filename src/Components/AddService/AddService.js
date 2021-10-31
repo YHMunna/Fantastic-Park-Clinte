@@ -4,6 +4,7 @@ const AddService = () => {
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
   } = useForm();
@@ -17,6 +18,7 @@ const AddService = () => {
       .then((data) => {
         console.log(data);
         window.alert("product added");
+        reset();
       });
   };
   return (
